@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website with Navbar</title>
+        <link rel="stylesheet" href="css/navbar.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="navbar">
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Dropdown</button>
+                            <div class="dropdown-content">
+                                <a href="#link1">Link 1</a>
+                                <a href="#link2">Link 2</a>
+                                <a href="#link3">Link 3</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <h1>Welcome to Our Website</h1>
+                <p>This is the main content area. Hover over the "Dropdown" link in the navbar to see the dropdown menu.</p>
+                <p>Resize the browser window to see the mobile hamburger menu in action.</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+                <p>hehehlehfleh</p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Website Name. All rights reserved.</p>
+        </footer>
+        <script>
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        </script>
+    </body>
+</html>
+
