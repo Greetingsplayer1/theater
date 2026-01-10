@@ -18,6 +18,7 @@ body {
   background-color: #333;
   grid-area: head;
   position: relative;
+
 }
 
 /* Hamburger Menu */
@@ -49,7 +50,7 @@ body {
 }
 
 .navbar a {
-  font-size: 14px;
+  font-size: 18px;
   color: white;
   text-align: center;
   padding: 8px 12px;
@@ -64,7 +65,7 @@ body {
 }
 
 .dropdown .dropbtn {
-  font-size: 14px;
+  font-size: 20px;
   border: none;
   outline: none;
   color: white;
@@ -137,15 +138,15 @@ body {
   }
 
   .hamburger.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(50deg) translate(5px, 5px);
   }
 
   .hamburger.active .hamburger-line:nth-child(2) {
-    opacity: 0;
+    opacity: 30%;
   }
 
   .hamburger.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-50deg) translate(7px, -6px);
   }
 
   .nav-links {
