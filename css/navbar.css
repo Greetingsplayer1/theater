@@ -63,7 +63,7 @@ body {
 
 /* Scrollbar styling for secondary navbar */
 .secondary-navbar::-webkit-scrollbar {
-  height: 10px;
+  height: 8px;
 }
 
 .secondary-navbar::-webkit-scrollbar-track {
