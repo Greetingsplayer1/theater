@@ -286,7 +286,142 @@ Changes background to red when hovering over links or dropdown buttons.
 
 ---
 
-## 13. Mobile Styles (Media Query)
+## 13. Secondary Navbar (Horizontal Scrollable)
+
+```css
+/* Secondary Navbar Container */
+.secondary-navbar {
+  background-color: #444;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 30px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Secondary Nav Links Container */
+.secondary-nav-links {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  width: max-content;
+}
+
+/* Secondary Nav List Items */
+.secondary-nav-links li {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Secondary Nav Links */
+.secondary-navbar a {
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+/* Secondary Nav Hover Effect */
+.secondary-navbar a:hover {
+  background-color: orange;
+}
+
+/* Custom Scrollbar Styles */
+.secondary-navbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.secondary-navbar::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.secondary-navbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  border: 2px solid #333;
+}
+
+.secondary-navbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+```
+
+### What it does:
+
+#### Container (.secondary-navbar):
+- **background-color: #444**: Slightly lighter gray than primary navbar
+- **overflow-x: auto + overflow-y: hidden**: Enables horizontal scrolling, hides vertical overflow
+- **white-space: nowrap**: Prevents text wrapping to new lines
+- **height: 30px**: Compact height (smaller than primary navbar at 35px)
+- **width: 100%**: Full width of parent container
+- **flex-shrink: 0**: Prevents the navbar from shrinking in flex layouts
+
+#### Links Container (.secondary-nav-links):
+- **display: inline-flex**: Creates horizontal flex container that only takes needed width
+- **width: max-content**: Ensures container expands to fit all links (enables scrolling)
+- **justify-content: flex-start**: Left-aligns links
+
+#### Links (.secondary-navbar a):
+- **font-size: 14px**: Slightly smaller than primary navbar (18px)
+- **padding: 6px 12px**: Compact padding for smaller navbar
+- **text-align: left**: Left-aligned text
+- **transition: 0.3s**: Smooth hover transition
+
+#### Scrollbar Styling:
+- **height: 10px**: Thicker scrollbar for easier touch interaction
+- **border-radius: 5px**: Rounded scrollbar corners
+- **border: 2px solid #333**: Adds spacing between scrollbar and track
+- Custom colors for track, thumb, and hover states
+
+### Mobile Secondary Navbar:
+
+```css
+@media screen and (max-width: 768px) {
+  .secondary-navbar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    grid-area: secondary;
+    width: 100%;
+  }
+  
+  .secondary-nav-links {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: max-content;
+  }
+  
+  .secondary-nav-links li {
+    display: inline-block;
+    width: auto;
+    flex-shrink: 0;
+  }
+  
+  .secondary-navbar a {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    padding: 6px 12px;
+  }
+}
+```
+
+### What it does on mobile:
+- **-webkit-overflow-scrolling: touch**: Enables smooth momentum scrolling on iOS
+- **Maintains horizontal layout**: Secondary navbar stays horizontal (not stacked)
+- **Scrollable**: Horizontal scrolling enabled when content overflows
+- **Same dimensions**: Keeps the compact size and left alignment
+- **flex-shrink: 0**: Prevents items from shrinking, ensuring scroll works
+
+---
+
+## 14. Mobile Styles (Media Query)
 
 ```css
 @media screen and (max-width: 768px) {
@@ -368,6 +503,8 @@ Desktop Layout:
 ┌─────────────────────────┐
 │       NAVBAR            │  ← grid-area: head
 ├─────────────────────────┤
+│ ▸ Docs ▸ Examples ▸ ... │  ← Secondary Navbar (scrollable)
+├─────────────────────────┤
 │                         │
 │      MAIN CONTENT       │  ← grid-area: main
 │                         │
@@ -375,9 +512,16 @@ Desktop Layout:
 │        FOOTER           │  ← margin-top: auto
 └─────────────────────────┘
 
+Secondary Navbar (Scrollable):
+┌─────────────────────────────────────────────────────────────┐
+│ Docs  Examples  Resources  Support  Tutorials  API  Blog... │  ← scrolls horizontally
+└─────────────────────────────────────────────────────────────┘
+
 Mobile Layout (≤768px):
 ┌─────────────────────────┐
 │ [≡]    NAVBAR LINKS     │  ← Hamburger + horizontal or hamburger menu
+├─────────────────────────┤
+│ Docs  Examples  Resour...│  ← Secondary navbar stays horizontal + scrollable
 ├─────────────────────────┤
 │      MAIN CONTENT       │
 ├─────────────────────────┤
@@ -398,6 +542,24 @@ When hamburger is clicked:
 │ Contact                 │
 └─────────────────────────┘
 ```
+
+---
+
+## Secondary Navbar Scroll Behavior
+
+When the secondary navbar contains more links than can fit in the viewport:
+
+```
+┌────────────────────────────────────────┐
+│ Docs  Examples  Resources  Support  Tu │ ← Visible portion
+│                                        │ ← Hidden portion (scroll to see)
+│          ← Scroll →                    │
+└────────────────────────────────────────┘
+```
+
+- **Desktop**: Use mouse wheel, trackpad, or scrollbar to scroll horizontally
+- **Mobile**: Swipe left/right to scroll through all links
+- **Scrollbar**: Thick scrollbar (10px) at bottom of secondary navbar for easy interaction
 
 ---
 

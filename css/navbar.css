@@ -10,6 +10,7 @@ body {
   display: grid;
   grid-template-areas: 
     "head"
+    "secondary"
     "main";
   width: 100%;
 }
@@ -18,7 +19,65 @@ body {
   background-color: #333;
   grid-area: head;
   position: relative;
+  height: 35px;
+}
 
+/* Secondary Navbar */
+.secondary-navbar {
+  background-color: #444;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 30px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.secondary-nav-links {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  width: max-content;
+}
+
+.secondary-nav-links li {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.secondary-navbar a {
+  font-size: 14px;
+  color: white;
+  text-align: left;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.secondary-navbar a:hover {
+  background-color: orange;
+}
+
+/* Scrollbar styling for secondary navbar */
+.secondary-navbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.secondary-navbar::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.secondary-navbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  border: 2px solid #333;
+}
+
+.secondary-navbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* Hamburger Menu */
@@ -142,11 +201,11 @@ body {
   }
 
   .hamburger.active .hamburger-line:nth-child(2) {
-    opacity: 30%;
+    opacity: 30%; 
   }
 
   .hamburger.active .hamburger-line:nth-child(3) {
-    transform: rotate(-50deg) translate(7px, -6px);
+    transform: rotate(-50deg) translate(5px, -5px);
   }
 
   .nav-links {
@@ -199,6 +258,34 @@ body {
 
   .dropdown-content a {
     padding-left: 30px;
+  }
+  
+  /* Secondary Navbar Mobile Styles - Keep horizontal and scrollable */
+  .secondary-navbar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    grid-area: secondary;
+    width: 100%;
+  }
+  
+  .secondary-nav-links {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: max-content;
+  }
+  
+  .secondary-nav-links li {
+    display: inline-block;
+    width: auto;
+    flex-shrink: 0;
+  }
+  
+  .secondary-navbar a {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    padding: 6px 12px;
   }
 }
 
