@@ -63,7 +63,7 @@ body {
 
 /* Scrollbar styling for secondary navbar */
 .secondary-navbar::-webkit-scrollbar {
-  height: 8px;
+  height:5px;
 }
 
 .secondary-navbar::-webkit-scrollbar-track {
@@ -202,11 +202,11 @@ body {
 }
 
 .card {
-  background-color: #0a2a0d;
+  background-color: #7f7c7c;
   color: rgb(255, 255, 255);
-  border: 2px solid #33FF33;
+  border: 3px solid #000000;
   border-radius: 80px;
-  height: 350px;
+  height: 300px;
   width: 250px;
   text-align: center;
   font-size: 18px;
@@ -224,7 +224,7 @@ body {
 .line {
   height: 0px;
   width: 98%;
-  border: 4px solid #33ff33;
+  border: 4px solid #fbfbfb;
   margin: 10px 0;
 }
 
@@ -236,7 +236,19 @@ body {
 
 .pop-active {
   animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  /* cubic-bezier creates that bouncy, organic feeling */
+}
+
+.Button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ff0000;
+  border: 3px solid #000000;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px;
 }
 
 /* Mobile Styles */
