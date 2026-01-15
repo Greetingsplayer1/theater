@@ -240,15 +240,14 @@ body {
 
 .Button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-size: 18px;
   color: #fff;
   background-color: #ff0000;
   border: 3px solid #000000;
   border-radius: 15px;
   text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
-  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s
 }
 
 /* Mobile Styles */
