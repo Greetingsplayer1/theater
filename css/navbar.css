@@ -188,6 +188,57 @@ body {
   margin-top: auto;
 }
 
+/* Cards container */
+.crdgrd {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  flex: 1;
+}
+
+.card {
+  background-color: #0a2a0d;
+  color: rgb(255, 255, 255);
+  border: 2px solid #33FF33;
+  border-radius: 80px;
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h2 {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+.line {
+  height: 0px;
+  width: 98%;
+  border: 4px solid #33ff33;
+  margin: 10px 0;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); } /* Pop out slightly more */
+  100% { transform: scale(1.1); }  /* Settle at slightly larger */
+}
+
+.pop-active {
+  animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  /* cubic-bezier creates that bouncy, organic feeling */
+}
+
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .hamburger {

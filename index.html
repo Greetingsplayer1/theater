@@ -54,32 +54,30 @@
             <div class="main-content">
                 <h1>Welcome to Our Website</h1>
                 <p>This is the main content area. Hover over the "Dropdown" link in the navbar to see the dropdown menu.</p>
-                <p>Resize the browser window to see the mobile hamburger menu in action.</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
-                <p>hehehlehfleh</p>
+
+                <div class="crdgrd">
+        <div class="card" id="crd1">
+            <h2>1 hour $50</h2>
+            <div class="line"></div>
+            <p>$50 per person with up to <br>
+                10% OFF!!!</p>
+        </div>
+
+        <div class="card" id="crd2">
+            <h2>2 hours $90 </h2>
+            <div class="line"></div>
+            <p>$90 per person for two hours with up to 10% OFF!!!</p>
+        </div>
+
+        <div class="card" id="crd3">
+            <h2>4 hours $150</h2>
+            <div class="line"></div>
+            <p>$150 per person for four hours with up to 10% OFF!!!</p>
+        </div>
+    </div>
             </div>
+
+            
         </div>
         <footer class="footer">
             <p>&copy; 2024 Website Name. All rights reserved.</p>
@@ -100,7 +98,23 @@
                     hamburger.classList.remove('active');
                     navLinks.classList.remove('active');
                 }
-            });
+            })
+
+            const elements = document.querySelectorAll('#crd1, #crd2, #crd3');
+
+elements.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    el.classList.add('pop-active');
+  });
+
+  el.addEventListener('mouseleave', () => {
+    el.classList.remove('pop-active');
+    // Resetting scale smoothly
+    el.style.transform = 'scale(1)';
+    el.style.transition = 'transform 0.2s ease-in-out';
+  });
+});
+
         </script>
     </body>
 </html>
