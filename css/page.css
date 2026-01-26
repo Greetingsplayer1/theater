@@ -34,7 +34,42 @@
   position: absolute;
   left: 30px;
   bottom: 20px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  width: 100%;
+  width: 155px;
+}
+
+.hello {
+    color: white;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 2px;
+    position: absolute;
+    width: 10px;
+}
+
+.decend
+{
+    width: 300px;
+    height: auto;
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.None {
+    background-color: lightgray;
+    width: auto;
+    margin-top: 36px;
+}
+
+.thes
+{
+    width: 300px;
+    height: auto;
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
 }
