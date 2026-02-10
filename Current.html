@@ -10,10 +10,11 @@
         <style>
             #build1, #build2, #build3, #build4 {
                 display: block;
-                flex-direction: column;
-                width: 45%;
+                width: 100%;
+                max-width: 100%;
                 height: auto;
-                margin: 10px;
+                margin: 10px 0;
+                object-fit: contain;
             }
         </style>
     </head>
@@ -60,10 +61,12 @@ Falls Church, VA 22042</p>
 
 <h2>See you at the show!</h2> 
 
-<img id="build1" src="media/Build1.HEIC" alt="Picture of the set being built">
-<img id="build2" src="media/Build2.HEIC" alt="Picture of the set being built">
-<img id="build3" src="media/Build3.HEIC" alt="Picture of the set being built">
-<img id="build4" src="media/Build4.HEIC" alt="Picture of the set being built">
+<div style="display: flex; flex-direction: column; gap: 10px;">
+<img id="build1" src="media/Build1.jpg" alt="Picture of the set being built">
+<img id="build2" src="media/Build2.jpg" alt="Picture of the set being built">
+<img id="build3" src="media/Build3.jpg" alt="Picture of the set being built">
+<img id="build4" src="media/Build4.jpg" alt="Picture of the set being built">
+</div>
 
             </div>
         </div>
