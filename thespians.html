@@ -117,13 +117,56 @@ Eleanor Reynolds (‘25)</p>
 
         </div>
         <footer class="footer">
-            <p>&copy; 2026 Theater Project.
-            </p>
-            <hr>
-            <p>
-                Contact Info: Kyle.r.medina@gmail.com
-            </p>
-        </footer>
+    <p>&copy; 2026 Theater Project.</p>
+    <hr>
+    <p>Contact Info: Kyle.r.medina@gmail.com</p>
+
+    <form id="contact-form" action="https://formsubmit.co/ajax/kyle.r.medina@gmail.com" method="POST">
+        <fieldset id="questions-section">
+            <legend><h1>Questions?</h1></legend>
+
+            <!-- Text box for their question -->
+            <p>What would you like to ask?</p>
+            <input type="text" name="User_Question" placeholder="Type your question here..." required style="width: 100%; margin-bottom: 10px;">
+            
+            
+            <input type="text" name="Sender_Name" placeholder="Your Name" required>
+            <input type="email" name="Sender_Email" placeholder="Your Email" required>
+            
+            <button type="submit">Send</button>
+        </fieldset>
+    </form>
+    
+    <div id="status"></div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('status');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            status.innerText = "Sending...";
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    status.innerText = "Success! Your question was sent.";
+                    form.reset();
+                } else {
+                    status.innerText = "Error sending. Please try again.";
+                }
+            })
+            .catch(error => {
+                status.innerText = "Connection error.";
+            });
+        });
+    </script>
+</footer>
         <script>
             // Hamburger menu toggle
             const hamburger = document.querySelector('.hamburger');
