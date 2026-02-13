@@ -172,6 +172,10 @@ body {
   text-align: center;
 }
 
+#contact-form {
+  margin-bottom: 100px;
+}
+
 #schools {
   margin: 6px 0 0 0;
   width: 250px;
